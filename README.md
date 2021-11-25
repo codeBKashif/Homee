@@ -23,16 +23,20 @@ POST    localhost:3000/user/register
 name
 email
 password
+```
+
 ![register](./public/reister-user-1.png)
 ![Already Exist](./public/reister-user.png)
 
-
+```bash
 POST    localhost:3000/user/login
 email
 password
+```
+
 ![login](./public/login.png)
 
-
+```bash
 POST    localhost:3000/apartment
 city
 country
@@ -40,26 +44,36 @@ rooms
 building
 lat
 long
+```
+
 ![Add Apartment](./public/add-apartment.png)
 
+```bash
 GET     localhost:3000/apartment?lat=33.6503977&long=72.9544382&city=islamabad&radius=20
 lat
 long
 city
 country
 radius
+```
+
 ![Get Apartments](./public/get-apartment.png)
 
-
+```bash
 POST     localhost:3000/user/favorite
 apartmentId
+```
+
 ![Add Favorite](./public/add-favorite.png)
 
-
-
+```bash
 GET     localhost:3000/user/favorite
+```
+
 ![List Favorites](./public/get-favorite.png)
 
+```bash
 GraphQL Example
-![GraphQL example](./public/graphQL.png)
 ```
+
+![GraphQL example](./public/graphQL.png)
