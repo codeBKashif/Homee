@@ -1,0 +1,40 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id         Int         @id @default(autoincrement())
+  name       String
+  email      String
+  password   String
+  apartments Apartment[]
+  favorites  Favorite[]
+  createdAt  DateTime    @default(now())
+}
+
+model Apartment {
+  id        Int        @id @default(autoincrement())
+  rooms     Int
+  building  String
+  city      String
+  country   String
+  lat       String
+  long      String
+  owner     User       @relation(fields: [userId], references: [id])
+  Favorites Favorite[]
+  userId    Int
+  createdAt DateTime   @default(now())
+}
+
+model Favorite {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  apartmentId Int
+  User        User      @relation(fields: [userId], references: [id])
+  Apartment   Apartment @relation(fields: [apartmentId], references: [id])
+}

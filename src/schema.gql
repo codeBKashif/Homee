@@ -1,0 +1,30 @@
+type Apartment {
+  userId: ID!
+  city: String!
+  country: String!
+  building: String!
+  lat: String!
+  long: String!
+}
+
+input NewApartment {
+  city: String!
+  country: String!
+  rooms: ID!
+  lat: String!
+  long: String!
+  building: String!
+  userId: ID!
+}
+
+type Query {
+  apartments(
+    skip: Int = 0
+    take: Int = 25
+    city: String = null
+    country: String = null
+    lat: String = null
+    long: String = null
+    radius: number = null
+  ): [Apartment!]!
+}

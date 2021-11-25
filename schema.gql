@@ -1,0 +1,17 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ApartmentModel {
+  rooms: ID!
+  city: ID!
+  country: ID!
+  userId: ID!
+  lat: String!
+  long: String!
+  building: String!
+}
+
+type Query {
+  apartments(radius: Int = null, long: String = null, lat: String = null, country: String = null, city: String = null, take: Int = 25, skip: Int = 0): [ApartmentModel!]!
+}
